@@ -62,7 +62,7 @@ let monthMainChart = new Chart(ctx2, {
         ],
         datasets: [{
             label: 'значение',
-            data: [10, 12, 19, 17, 18, 19.5, 19, 19, 19, 19, 19, 19],
+            data: analysisData['monthMainChart'][2021],
             backgroundColor: [
                 'rgba(101, 25, 252, 1)'
             ],
@@ -106,7 +106,7 @@ let averageRateByDepartment = new Chart(ctx3, {
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
             label: 'значение',
-            data: [30, 24, 22, 20, 18, 16, 11],
+            data: analysisData['averageRateByDepartment'][2021],
             backgroundColor: [
                 'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
                 'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
@@ -153,7 +153,7 @@ let departmentAverageDoughnut = new Chart(ctx4, {
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
             label: 'значение',
-            data: [30, 24, 22, 20, 18, 16, 11],
+            data: analysisData['departmentAverageDoughnut'][2021],
             backgroundColor: [
                 'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
                 'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
@@ -211,7 +211,7 @@ let departmentAverageDoughnutPerPerson = new Chart(ctx5, {
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
             label: 'значение',
-            data: [30, 24, 22, 20, 18, 16, 11],
+            data: analysisData['departmentAverageDoughnutPerPerson'][2021],
             backgroundColor: [
                 'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
                 'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
@@ -268,37 +268,7 @@ let ageScatter = new Chart(ctx6, {
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
             label: 'значение',
-            data: [{
-                x: 5,
-                y: 4
-            }, {
-                x: 2,
-                y: 14
-            },
-            {
-                x: 4,
-                y: 12
-            },
-            {
-                x: 2,
-                y: 10
-            },
-            {
-                x: 3,
-                y: 4
-            },
-            {
-                x: 3,
-                y: 5
-            },
-            {
-                x: 3,
-                y: 8
-            },
-            {
-                x: 6,
-                y: 12
-            }],
+            data: analysisData['ageScatter'][2021],
             backgroundColor: [
                 'rgba(252, 25, 252, 1)'
             ],
@@ -335,6 +305,9 @@ let ageScatter = new Chart(ctx6, {
 let yearSelect = document.getElementById('year-select')
 let averageValue = document.getElementById('average-value')
 let medianValue = document.getElementById('median-value')
+
+averageValue.innerHTML = analysisData['averageValue'][2021]
+medianValue.innerHTML = analysisData['medianValue'][2021]
 
 yearSelect.onchange = function() {
 
